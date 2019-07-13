@@ -1,5 +1,5 @@
 from settings import NAME
-from flask import Flask, escape, request, render_template
+from flask import Flask, escape, request, render_template, url_for
 from flask_pymongo import PyMongo
 
 app = Flask(__name__)
@@ -10,14 +10,13 @@ mongo = PyMongo(app)
 def hello_world():
     print('Name:', NAME)
     f"NAME: {NAME}"
-    return render_template("hello.html", name=NAME)
+    return render_template("home.html", name=NAME)
 
 @app.route('/sales')
 def sales():
     return render_template("sales.html", total=42)
 
-@app.route('/create')
+@app.route('/create', methods=['POST'])
 def create():
-    print(mongo)
-    data = mongo.db.insert({"location": "redmond"})
-    return render_template("hello.html", total=42)
+    data = mongo.db.locations.insert({"location": "TerrorBone"})
+    return "Data created"
