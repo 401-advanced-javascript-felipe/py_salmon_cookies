@@ -8,3 +8,7 @@ def hello_world():
     print('Adam:', NAME)
     f"NAME: {NAME}"
     return render_template("hello.html", name=NAME)
+
+@app.route('/sales')
+def sales():
+    return render_template("sales.html", total=42)
