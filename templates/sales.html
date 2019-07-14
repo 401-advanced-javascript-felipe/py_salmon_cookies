@@ -2,6 +2,8 @@
 <html>
   <head>
       {% include './components/head.html'%}
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/sales.css') }}">
+
   </head>
 
   <body>
@@ -54,8 +56,10 @@
       </table>
     </section>
 
-    <section id="cityList">
-        <table id="salesTable">
+
+    <section id="cityListMongo">
+        <p>0's is the default data. Data is being pulled from mongo</p>
+        <table id="salesTableMongo">
           <tr>
             <th>City/Times</th>
             <th>6am</th>
@@ -64,8 +68,6 @@
             <th>9am</th>
             <th>10am</th>
             <th>Totals</th>
-
-
             <tr>
                 <td>{{ bend.city }}</td>
                 <td>{{ bend.sales[0] }}</td>

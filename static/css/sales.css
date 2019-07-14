@@ -1,0 +1,30 @@
+
+
+#addCityForm {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+  width: 80%;
+  outline: 2px solid black;
+  font-size: 1em;
+}
+
+#cityList {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+  width: 80%;
+  outline: 2px solid black;
+  font-size: 1.5em;
+
+}
+
+#cityListMongo {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+  width: 80%;
+  outline: 2px solid black;
+  font-size: 1.5em;
+
+}
