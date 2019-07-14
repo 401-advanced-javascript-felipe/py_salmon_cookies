@@ -1,3 +1,10 @@
+#instructions {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+  width: 80%;
+}
+
 #location {
   margin: auto;
   width: 80%;

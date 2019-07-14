@@ -4,7 +4,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  outline: 2px solid black;
 }
 
 header {
@@ -17,7 +16,6 @@ nav {
   margin-top:5px; 
   width: 80%;
   height: 30px;
-  outline: 2px solid black;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -29,4 +27,16 @@ nav a {
   font-size: 1.5em;
   width: 50%;
 
+}
+
+#headerImages{
+  outline: 2px solid black;
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+
+footer{
+  margin: 20px auto 0 auto; 
+  text-align: center;
 }
