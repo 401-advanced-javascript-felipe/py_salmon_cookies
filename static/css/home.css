@@ -1,0 +1,26 @@
+#instructions {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+  width: 80%;
+}
+
+#location {
+  margin: auto;
+  width: 80%;
+}
+
+#location h1 {
+  font-size: 1.7em;
+  margin: 10px 0 10px 20px;
+}
+
+#locationCards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  outline: 2px solid black;
+  text-align: center;
+  font-size: 1.2em;
+
+}

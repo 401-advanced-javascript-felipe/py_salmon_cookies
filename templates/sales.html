@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      {% include './components/head.html'%}
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/sales.css') }}">
+
+  </head>
+
+  <body>
+    <header>
+        {% include './components/header.html'%}
+      </header>
+
+    <nav>
+        {% include './components/nav.html'%}
+      </nav>   
+
+    <section>
+      <form id="addCityForm">
+        <fieldset>
+          <legend>Sales Predictions</legend>
+          <label>City Name</label>
+          <input name="cityName" type="text" required/>
+          <label>Min Customers</label>
+          <input name="min" type="number" required/>
+          <label>Max Customers</label>
+          <input name="max" type="number" required/>
+          <label>Avg cookies sold/Customer</label>
+          <input name="avg" type="number" required/>
+          <button type="submit">Add City</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <section id="cityList">
+      <table id="salesTable">
+        <tr>
+          <th>City/Times</th>
+          <th>6am</th>
+          <th>7am</th>
+          <th>8am</th>
+          <th>9am</th>
+          <th>10am</th>
+          <th>11am</th>
+          <th>12am</th>
+          <th>1pm</th>
+          <th>2pm</th>
+          <th>3pm</th>
+          <th>4pm</th>
+          <th>5pm</th>
+          <th>6pm</th>
+          <th>7pm</th>
+          <th>8pm</th>
+          <th>Totals</th>
+        </tr>
+      </table>
+    </section>
+
+
+    <section id="cityListMongo">
+        <p>0's is the default data. Data is being pulled from mongo</p>
+        <table id="salesTableMongo">
+          <tr>
+            <th>City/Times</th>
+            <th>6am</th>
+            <th>7am</th>
+            <th>8am</th>
+            <th>9am</th>
+            <th>10am</th>
+            <th>Totals</th>
+            <tr>
+                <td>{{ bend.city }}</td>
+                <td>{{ bend.sales[0] }}</td>
+                <td>{{ bend.sales[1] }}</td>
+                <td>{{ bend.sales[2] }}</td>
+                <td>{{ bend.sales[3] }}</td>
+                <td>{{ bend.sales[4] }}</td>
+                <td>{{ bend.sales|sum() }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ redmond.city }}</td>
+                <td>{{ redmond.sales[0] }}</td>
+                <td>{{ redmond.sales[1] }}</td>
+                <td>{{ redmond.sales[2] }}</td>
+                <td>{{ redmond.sales[3] }}</td>
+                <td>{{ redmond.sales[4] }}</td>
+                <td>{{ redmond.sales|sum() }}</td>
+            </tr>
+
+            <tr>
+                <td>{{ prineville.city }}</td>
+                <td>{{ prineville.sales[0] }}</td>
+                <td>{{ prineville.sales[1] }}</td>
+                <td>{{ prineville.sales[2] }}</td>
+                <td>{{ prineville.sales[3] }}</td>
+                <td>{{ prineville.sales[4] }}</td>
+                <td>{{ prineville.sales|sum() }}</td>
+            </tr>
+
+
+
+        </table>
+      </section>
+  
+
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>

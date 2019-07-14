@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      {% include './components/head.html'%}
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+  </head>
+  <body>
+    <header>
+      {% include './components/header.html'%}
+    </header>
+
+    <nav>
+      {% include './components/nav.html'%}
+    </nav>
+
+    <section id="headerImages">
+      <img src="{{ url_for('static', filename='images/salmon.png') }}" width="20%"/>
+      <img src="{{ url_for('static', filename='images/chinook.png') }}" width="20%"/>
+      <img src="{{ url_for('static', filename='images/salmon.png') }}" width="20%"/>
+      <img src="{{ url_for('static', filename='images/chinook.png') }}" width="20%"/>
+    </section>
+
+    <section id="instructions">
+      <p>
+        To create a data in a database click "Create Data". To delete it all click "Delete all Data". You will see the differece in the sales page. After you create or delete the db you will need to return home. I could not figure out a redirect
+      </p>
+      
+      <form method="post" action="/create" enctype="multipart/form-data">
+        <input type="submit" value="Create Data">
+      </form>
+
+      <form method="post" action="/destroy" enctype="multipart/form-data">
+        <input type="submit" value="Delete All Data">
+      </form>
+
+
+    
+    </section>
+
+    <section id="location">
+    <h1>LOCATIONS</h1>
+    <section id="locationCards">
+      <article>
+        <h2>Torrance</h2>
+          <p>3 Bear Hill Rd.<br>Torrance, CA 90505<br>Monday-Friday 9am-5pm</p>
+      </article>
+
+      <article>
+          <h2>Weset Palm Beach</h2>
+          <p>77 Front Lane<br>West Palm Beach, FL 33404<br>Monday-Friday 9am-5pm</p>
+      </article>
+
+      <article>
+          <h2>Asheboro</h2>
+          <p>914 Durham Ave.<br>Asheboro, NC 27205<br>Monday-Friday 9am-5pm</p>
+      </article>
+    </section>
+
+
+<footer>
+    {% include './components/footer.html'%}
+  </footer>
+    
+
+
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+  </body>
+</html>
