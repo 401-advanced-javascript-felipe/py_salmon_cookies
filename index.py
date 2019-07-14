@@ -9,7 +9,7 @@ if not MONGO_URL:
 
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb://localhost:27017/salmonCookies"
+app.config["MONGO_URI"] = MONGO_URL
 mongo = PyMongo(app)
 
 @app.route('/')
