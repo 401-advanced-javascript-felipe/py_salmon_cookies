@@ -3,7 +3,7 @@ from settings import NAME
 from flask import Flask, escape, request, render_template, url_for
 from flask_pymongo import PyMongo
 
-MONGO_URL = os.environ.get('MONGODB_URI')
+MONGO_URL = os.environ.get('MONGO_URL')
 if not MONGO_URL:
     MONGO_URL = "mongodb://localhost:27017/salmonCookies";
 
